@@ -2,15 +2,14 @@ package com.thoughtworks.bootcamp;
 
 public class Probability {
 
-    private float probabilityOfHead;
-    private float probabilityOfTail;
+    private float probability;
 
-    public Probability(float probabilityOfHead, float probabilityOfTail) {
-        this.probabilityOfHead = probabilityOfHead;
-        this.probabilityOfTail = probabilityOfTail;
+    public Probability(float probability) {
+        this.probability = probability;
     }
 
-    public boolean checkEquality() {
-        return true;
+    @Override
+    public boolean equals(Object obj) {
+        return this.probability == ((Probability) obj).probability;
     }
 }
