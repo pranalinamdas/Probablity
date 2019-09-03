@@ -26,4 +26,11 @@ public class ProbabilityTest {
         Probability eventWithZeroProbability = new Probability(0.0f);
         assertEquals(1.0f, eventWithZeroProbability.calculateEventNotOccur());
     }
+
+    @Test
+    void givenNonZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnResult(){
+
+        Probability eventWithNonZeroProbability = new Probability(0.4f);
+        assertEquals(0.6f,eventWithNonZeroProbability.calculateEventNotOccur());
+    }
 }
