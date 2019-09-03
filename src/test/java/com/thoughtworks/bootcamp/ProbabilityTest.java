@@ -20,4 +20,10 @@ public class ProbabilityTest {
         assertFalse(probabilityOfTossingCoin.equals(probabilityOfEvenNumbersDice));
     }
 
+    @Test
+    void givenZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnOne(){
+
+        Probability eventWithZeroProbability = new Probability(0.0f);
+        assertEquals(1.0f, eventWithZeroProbability.calculateEventNotOccur());
+    }
 }
