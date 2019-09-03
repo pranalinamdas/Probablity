@@ -35,9 +35,16 @@ public class ProbabilityTest {
     }
 
     @Test
-    void givenZeroProbabilityOfEventsOccur_WhenCalculateBothEventsOccur_ThenShouldReturnZero(){
+    void givenZeroProbabilityOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnZero(){
 
         Probability twoEventsWithZeroProbability = new Probability(0.0f);
         assertEquals(0.0f, twoEventsWithZeroProbability.calculateEventsOccur());
+    }
+
+    @Test
+    void givenNonZeroProbabilitiesOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnProduct(){
+
+        Probability twoEventsWithZeroProbability = new Probability(0.5f, 0.6f);
+        assertEquals(0.30f, twoEventsWithZeroProbability.calculateEventsOccur());
     }
 }

@@ -3,9 +3,16 @@ package com.thoughtworks.bootcamp;
 public class Probability {
 
     private float probability;
+    private float probabilityOfFirstEvent;
+    private float probabilityOfSecondEvent;
 
     public Probability(float probability) {
         this.probability = probability;
+    }
+
+    public Probability(float probabilityOfFirstEvent, float probabilityOfSecondEvent){
+        this.probabilityOfFirstEvent = probabilityOfFirstEvent;
+        this.probabilityOfSecondEvent = probabilityOfSecondEvent;
     }
 
     @Override
@@ -18,6 +25,6 @@ public class Probability {
     }
 
     public float calculateEventsOccur() {
-        return 0;
+        return probabilityOfFirstEvent*probabilityOfSecondEvent;
     }
 }
