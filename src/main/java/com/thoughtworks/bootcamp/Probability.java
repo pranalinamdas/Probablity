@@ -16,4 +16,8 @@ public class Probability {
     public float calculateEventNotOccur() {
         return 1-probability;
     }
+
+    public float calculateEventsOccur() {
+        return 0;
+    }
 }
