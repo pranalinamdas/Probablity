@@ -2,29 +2,17 @@ package com.thoughtworks.bootcamp;
 
 public class Probability {
 
-    private float probability;
-    private float probabilityOfFirstEvent;
-    private float probabilityOfSecondEvent;
+    private float value;
 
-    public Probability(float probability) {
-        this.probability = probability;
-    }
-
-    public Probability(float probabilityOfFirstEvent, float probabilityOfSecondEvent){
-        this.probabilityOfFirstEvent = probabilityOfFirstEvent;
-        this.probabilityOfSecondEvent = probabilityOfSecondEvent;
+    public Probability(float value) {
+        this.value = value;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return this.probability == ((Probability) obj).probability;
+
+        return this.value == ((Probability) obj).value;
     }
 
-    public float calculateEventNotOccur() {
-        return 1-probability;
-    }
 
-    public float calculateEventsOccur() {
-        return probabilityOfFirstEvent*probabilityOfSecondEvent;
-    }
-}
+ }

@@ -1,50 +1,24 @@
 package com.thoughtworks.bootcamp;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProbabilityTest {
+    private static Probability certainEvents;
+    private static Probability impossibleEvents;
 
-    @Test
-    void givenSameProbabilityOfTwoEvents_WhenCheckEquality_ThenShouldReturnTrue(){
-        Probability probabilityOfTossingCoin = new Probability(0.5f);
-        Probability probabilityOfEvenNumbersDice = new Probability(0.5f);
-
-        assertTrue(probabilityOfTossingCoin.equals(probabilityOfEvenNumbersDice));
+    @BeforeEach
+    void setUp() {
+        certainEvents = new Probability(1.0f);
+        impossibleEvents = new Probability(0.0f);
     }
 
     @Test
-    void givenDifferentProbabilityOfTwoEvents_WhenCheckEquality_ThenShouldReturnFalse(){
-        Probability probabilityOfTossingCoin = new Probability(0.3f);
-        Probability probabilityOfEvenNumbersDice = new Probability(0.7f);
-
-        assertFalse(probabilityOfTossingCoin.equals(probabilityOfEvenNumbersDice));
+    void givenZeroProbabilityOfTwoEvents_WhenCheckEquality_ThenShouldReturnTrue() {
+        Probability ZeroProbabilityOfEvents = new Probability(0.0f);
+        assertEquals(impossibleEvents, ZeroProbabilityOfEvents);
     }
 
-    @Test
-    void givenZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnOne(){
-
-        Probability eventWithZeroProbability = new Probability(0.0f);
-        assertEquals(1.0f, eventWithZeroProbability.calculateEventNotOccur());
-    }
-
-    @Test
-    void givenNonZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnResult(){
-
-        Probability eventWithNonZeroProbability = new Probability(0.4f);
-        assertEquals(0.6f,eventWithNonZeroProbability.calculateEventNotOccur());
-    }
-
-    @Test
-    void givenZeroProbabilityOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnZero(){
-
-        Probability twoEventsWithZeroProbability = new Probability(0.0f);
-        assertEquals(0.0f, twoEventsWithZeroProbability.calculateEventsOccur());
-    }
-
-    @Test
-    void givenNonZeroProbabilitiesOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnProduct(){
-
-        Probability twoEventsWithZeroProbability = new Probability(0.5f, 0.6f);
-        assertEquals(0.30f, twoEventsWithZeroProbability.calculateEventsOccur());
-    }
 }
