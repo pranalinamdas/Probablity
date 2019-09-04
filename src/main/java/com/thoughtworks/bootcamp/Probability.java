@@ -19,5 +19,9 @@ public class Probability {
         return new Probability(1.0f - value);
 
     }
+
+    public Probability and(Probability event) {
+        return new Probability(value * event.value);
+    }
 }
 

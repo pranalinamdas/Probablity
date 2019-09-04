@@ -36,4 +36,8 @@ public class ProbabilityTest {
         assertEquals(impossibleEvents, certainEvents.not());
     }
 
+    @Test
+    void givenZeroProbabilityOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnZero() {
+        assertEquals(impossibleEvents, impossibleEvents.and(impossibleEvents));
+    }
 }
