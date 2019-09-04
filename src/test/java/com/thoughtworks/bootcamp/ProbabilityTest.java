@@ -51,4 +51,9 @@ public class ProbabilityTest {
     void givenZeroProbabilityOfTwoEvents_WhenCalculateEitherOccurrence_ThenShouldReturnZero(){
         assertEquals(impossibleEvents, impossibleEvents.or(impossibleEvents));
     }
+
+    @Test
+    void givenOneProbabilityOfTwoEvents_WhenCalculateEitherOccurrence_ThenShouldReturnOne(){
+        assertEquals(certainEvents, certainEvents.or(certainEvents));
+    }
 }
