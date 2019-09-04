@@ -21,4 +21,8 @@ public class ProbabilityTest {
         assertEquals(impossibleEvents, ZeroProbabilityOfEvents);
     }
 
+    @Test
+    void givenZeroProbabilityOfOneEventAndOneProbabilityOfAnotherEvent_WhenCheckEquality_ThenShouldReturnZero() {
+        assertNotEquals(impossibleEvents, certainEvents);
+    }
 }
