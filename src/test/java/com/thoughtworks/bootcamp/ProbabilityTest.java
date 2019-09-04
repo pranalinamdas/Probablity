@@ -30,4 +30,10 @@ public class ProbabilityTest {
     void givenZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnOne() {
         assertEquals(certainEvents, impossibleEvents.not());
     }
+
+    @Test
+    void givenOneProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnZero() {
+        assertEquals(impossibleEvents, certainEvents.not());
+    }
+
 }
