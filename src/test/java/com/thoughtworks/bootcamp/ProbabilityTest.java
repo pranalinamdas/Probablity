@@ -40,4 +40,12 @@ public class ProbabilityTest {
     void givenZeroProbabilityOfTwoEvents_WhenCalculateBothEventsOccur_ThenShouldReturnZero() {
         assertEquals(impossibleEvents, impossibleEvents.and(impossibleEvents));
     }
+
+    @Test
+    void givenOneProbabilityOfOneEventAndZeroDotOneOfAnotherEvent_WhenCalculateBothEventsOccur_ThenShouldReturnZeroDotOne() {
+        Probability zeroDotOne = new Probability(0.1f);
+        assertEquals(new Probability(0.1f), certainEvents.and(zeroDotOne));
+    }
+
+
 }
