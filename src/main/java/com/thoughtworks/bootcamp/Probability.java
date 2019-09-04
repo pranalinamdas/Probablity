@@ -23,5 +23,9 @@ public class Probability {
     public Probability and(Probability event) {
         return new Probability(value * event.value);
     }
+
+    public Probability or(Probability probabilityEvent) {
+        return probabilityEvent;
+    }
 }
 
