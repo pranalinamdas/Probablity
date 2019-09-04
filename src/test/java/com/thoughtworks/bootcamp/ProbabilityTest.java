@@ -25,4 +25,9 @@ public class ProbabilityTest {
     void givenZeroProbabilityOfOneEventAndOneProbabilityOfAnotherEvent_WhenCheckEquality_ThenShouldReturnZero() {
         assertNotEquals(impossibleEvents, certainEvents);
     }
+
+    @Test
+    void givenZeroProbabilityOfEvent_WhenCalculateEventNotOccur_ThenShouldReturnOne() {
+        assertEquals(certainEvents, impossibleEvents.not());
+    }
 }

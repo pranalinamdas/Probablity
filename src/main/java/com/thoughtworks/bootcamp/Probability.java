@@ -15,4 +15,9 @@ public class Probability {
     }
 
 
- }
+    public Probability not() {
+        return new Probability(1.0f - value);
+
+    }
+}
+
