@@ -56,4 +56,11 @@ public class ProbabilityTest {
     void givenOneProbabilityOfTwoEvents_WhenCalculateEitherOccurrence_ThenShouldReturnOne(){
         assertEquals(certainEvents, certainEvents.or(certainEvents));
     }
+
+    @Test
+    void givenTwoDifferentProbabilityOfTwoEvents_WhenCalculateEitherEventOccurrence_ThenShouldReturnProbability(){
+        Probability evenNumbersOnRollingDice = new Probability(0.5f);
+        Probability oddNumbersOnRollingDice = new Probability(0.5f);
+        assertEquals(new Probability(0.75f), evenNumbersOnRollingDice.or(oddNumbersOnRollingDice));
+    }
 }
